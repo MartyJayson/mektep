@@ -1,0 +1,13 @@
+{
+    "name": "rebuni/webprogramming",
+    "description": "Rebuni online education platform (ROEP) is a web based system which aim to connect colleges, teachers and students in one organized platform.",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./" 
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.3",
+        "yenepay/php-sdk": "dev-master"
+    }
+}
