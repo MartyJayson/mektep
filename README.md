@@ -1,8 +1,13 @@
 Mektep is a web based system which aim to connect colleges, teachers and students in one organized platform.
+# Specially for Internet Entrepreneurship.
+
+Abibulla Yershat
+Kalimbetova Aray
+IS-1809K
 
 ## Requirements 
-* `PHP7.4`
-* `Composer 1.10.1 2020-03-13 20:34:27`
+* `PHP`
+* `Composer 1.10.1`
 * `git 2.25.1`
 
 ## Steps
