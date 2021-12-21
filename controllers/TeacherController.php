@@ -15,7 +15,8 @@ class TeacherController extends Controller
     {
         $teacher = new Teacher();
         $user_id = Application::$app->getUesrId();
-        $data = Teacher::findOne(["id" => $user_id, 'user_type' => 'teacher']);
+        $data = new Teacher();
+        $data -> findOne(["id" => $user_id, 'user_type' => 'teacher']);
         $courses = Teacher::loadRelated("course_lecture", ["lecture_fk" => $user_id]);
         $followers = Teacher::loadRelated("followers", ["following_fk" => $user_id]);
         $schools = Teacher::loadRelated("join_requests", ["lecture_fk" => $user_id, 'status' => 1]);

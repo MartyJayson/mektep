@@ -48,7 +48,8 @@ class CourseController extends Controller
         if (isset($request->getBody()['courseID'])){
             $courseID = $request->getBody()['courseID'];
             $exist = Course::exist(['course_fk' => $courseID, "student_fk" => $user_id], "course_student");
-            $course = Course::findOne(["id" => $courseID]);
+            $course = new Course();
+            $course -> findOne(["id" => $courseID]);
             $course->user_paid = $exist;
             $course->id = $courseID;
             if($course->is_paid && !$course->price == 0 && !$course->user_paid) {

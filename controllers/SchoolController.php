@@ -14,12 +14,13 @@ class SchoolController extends Controller
 	{
 		$school = new School();
 		$user_id = Application::$app->getUesrId();
-		$exists = School::findOne(["user_fk" => $user_id]);
+			$exists = new School();
+			$exists -> findOne(["user_fk" => $user_id]);
 		if(!$exists) {
 			$response->redirect('/addschool');
 		}
 		$school->loadData($exists);
-		$courses = School::loadRelated("courses", ["school_fk" => $school->user_fk]);
+		$courses = School::loadRelated("courses", ["school_fk" => $school->$user_fk]);
 		$teachers = School::loadRelated("join_requests", ["school_fk" => $user_id, 'status' => 1]);
 		$join_requests = School::loadRelated("join_requests", ["school_fk" => $user_id, 'status' => 0]);
 		$school->courses = $courses;
@@ -54,7 +55,8 @@ class SchoolController extends Controller
 	{
 		$school = new School();
 		$user_id = Application::$app->getUesrId();
-		$exists = School::findOne(["user_fk" => $user_id]);
+		$exists = new School();
+		$exists -> findOne(["user_fk" => $user_id]);
 		if(!$exists){
 			$response->redirect('/school');
 		}
@@ -77,7 +79,8 @@ class SchoolController extends Controller
 	{
 		$school = new School();
 		$user_id = Application::$app->getUesrId();
-		$exists = School::findOne(["user_fk" => $user_id]);
+		$exists = new School();
+		$exists -> findOne(["user_fk" => $user_id]);
 		if(!$exists){
 			$response->redirect('/school');
 		}

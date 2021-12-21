@@ -157,7 +157,7 @@ Coded by www.creative-tim.com
         token: "ee6fab19c5a04ac1a32a645abde4613a",
         application: "argon-design-system-pro"
       });
-  </script>x
+  </script>
 </body>
 
 </html>

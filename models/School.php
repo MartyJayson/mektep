@@ -8,7 +8,7 @@ use app\core\DBModel;
 class School extends DBModel
 {
 	public int $user_fk;
-	public string $name = '';
+	public string $name = 'Mektep';
 	public string $email = '';
 	public string $phone_number = '';
 	public string $p_o_box = '';
