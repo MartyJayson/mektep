@@ -8,8 +8,8 @@ class rm013_create_table_followers
 		$SQL = "CREATE TABLE IF NOT EXISTS `followers` (
 				    `following_fk` INT NOT NULL,
 				    `follower_fk` INT NOT NULL,
-				    CONSTRAINT `fk_following_followers` FOREIGN KEY (`following_fk`) REFERENCES `rebuni_db`.`users`(`id`) ON DELETE CASCADE,
-				    CONSTRAINT `fk_follower_followers` FOREIGN KEY (`follower_fk`) REFERENCES `rebuni_db`.`users`(`id`) ON DELETE CASCADE,
+				    CONSTRAINT `fk_following_followers` FOREIGN KEY (`following_fk`) REFERENCES `db`.`users`(`id`) ON DELETE CASCADE,
+				    CONSTRAINT `fk_follower_followers` FOREIGN KEY (`follower_fk`) REFERENCES `db`.`users`(`id`) ON DELETE CASCADE,
 				    CONSTRAINT `pk_following_follower` PRIMARY KEY (`following_fk`, `follower_fk`)
 				) ENGINE=INNODB;";
 		$db->pdo->exec($SQL);	

@@ -14,7 +14,7 @@ class rm006_create_table_courses
 				    `price` DECIMAL,
 					`description` TEXT,
 				    `date_create` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-				    CONSTRAINT `fk_school_course` FOREIGN KEY (`school_fk`) REFERENCES `rebuni_db`.`schools`(`user_fk`) ON DELETE CASCADE
+				    CONSTRAINT `fk_school_course` FOREIGN KEY (`school_fk`) REFERENCES `db`.`schools`(`user_fk`) ON DELETE CASCADE
 				) ENGINE=INNODB;";
 		$db->pdo->exec($SQL);	
 	}

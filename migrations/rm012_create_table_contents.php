@@ -13,8 +13,8 @@ class rm012_create_table_contents
 				    `video` VARCHAR(200) NOT NULL,
 				    `description` TEXT NOT NULL,
 				    `date_created` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-				    CONSTRAINT `fk_cource_content` FOREIGN KEY (`course_fk`) REFERENCES `rebuni_db`.`courses`(`id`) ON DELETE CASCADE,
-				    CONSTRAINT `fk_lecture_content` FOREIGN KEY (`lecture_fk`) REFERENCES `rebuni_db`.`lectures`(`user_fk`) ON DELETE SET NULL
+				    CONSTRAINT `fk_cource_content` FOREIGN KEY (`course_fk`) REFERENCES `db`.`courses`(`id`) ON DELETE CASCADE,
+				    CONSTRAINT `fk_lecture_content` FOREIGN KEY (`lecture_fk`) REFERENCES `db`.`lectures`(`user_fk`) ON DELETE SET NULL
 				) ENGINE=INNODB;";
 		$db->pdo->exec($SQL);	
 	}

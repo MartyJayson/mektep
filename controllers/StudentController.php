@@ -16,7 +16,8 @@ class StudentController extends Controller
         $student = new Student();
         $course = new Course();
         $user_id = Application::$app->getUesrId();
-		$data = Student::findOne(["id" => $user_id, 'user_type' => 'student']);
+		    $data = new Student();
+            $data->findOne(["id" => $user_id, 'user_type' => 'student']);
         $student->loadData($data);
         $student->courses = $course;
         

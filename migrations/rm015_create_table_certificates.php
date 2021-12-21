@@ -11,8 +11,8 @@ class rm015_create_table_certificates
 				    `course_fk` INT NOT NULL,
 				    `file` VARCHAR(200) NOT NULL,
 				    `date_issued` TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-				    CONSTRAINT `fk_user_certificates` FOREIGN KEY (`user_fk`) REFERENCES `rebuni_db`.`users`(`id`) ON DELETE CASCADE,
-				    CONSTRAINT `fk_course_certificates` FOREIGN KEY (`course_fk`) REFERENCES `rebuni_db`.`courses`(`id`) ON DELETE CASCADE
+				    CONSTRAINT `fk_user_certificates` FOREIGN KEY (`user_fk`) REFERENCES `db`.`users`(`id`) ON DELETE CASCADE,
+				    CONSTRAINT `fk_course_certificates` FOREIGN KEY (`course_fk`) REFERENCES `db`.`courses`(`id`) ON DELETE CASCADE
 				) ENGINE=INNODB;";
 		$db->pdo->exec($SQL);	
 	}

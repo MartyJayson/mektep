@@ -9,8 +9,8 @@ class rm011_create_table_course_student
 				    `course_fk` INT NOT NULL,
 				    `student_fk` INT NOT NULL,
 				    `paid` BOOLEAN DEFAULT 0 NOT NULL,
-				    CONSTRAINT `fk_course_cs` FOREIGN KEY (`course_fk`) REFERENCES `rebuni_db`.`courses`(`id`) ON DELETE CASCADE,
-				    CONSTRAINT `fk_student_cs` FOREIGN KEY (`student_fk`) REFERENCES `rebuni_db`.`users`(`id`) ON DELETE CASCADE,
+				    CONSTRAINT `fk_course_cs` FOREIGN KEY (`course_fk`) REFERENCES `db`.`courses`(`id`) ON DELETE CASCADE,
+				    CONSTRAINT `fk_student_cs` FOREIGN KEY (`student_fk`) REFERENCES `db`.`users`(`id`) ON DELETE CASCADE,
 				    CONSTRAINT `pk_course_student` PRIMARY KEY (`course_fk`, `student_fk`)
 				) ENGINE=INNODB;";
 		$db->pdo->exec($SQL);	

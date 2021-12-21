@@ -10,7 +10,7 @@ class rm007_create_table_ratings
 				    `user_fk` INT NOT NULL UNIQUE,
 				    `is_school` BOOLEAN,
 				    `rate` INT,
-				    CONSTRAINT `fk_rating_user` FOREIGN KEY (`user_fk`) REFERENCES `rebuni_db`.`users`(`id`)    
+				    CONSTRAINT `fk_rating_user` FOREIGN KEY (`user_fk`) REFERENCES `db`.`users`(`id`)    
 				) ENGINE=INNODB;";
 		$db->pdo->exec($SQL);	
 	}

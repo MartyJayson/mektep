@@ -8,8 +8,8 @@ class rm018_create_table_group_permissions
 		$SQL = "CREATE TABLE IF NOT EXISTS `group_permissions` (
 			    `group_fk` INT NOT NULL,
 			    `permission_fk` INT NOT NULL,
-			    CONSTRAINT `fk_group_gp` FOREIGN KEY (`group_fk`) REFERENCES `rebuni_db`.`groups`(`id`) ON DELETE CASCADE,
-			    CONSTRAINT `fk_permission_gp` FOREIGN KEY (`permission_fk`) REFERENCES `rebuni_db`.`permissions`(`id`) ON DELETE CASCADE,
+			    CONSTRAINT `fk_group_gp` FOREIGN KEY (`group_fk`) REFERENCES `db`.`groups`(`id`) ON DELETE CASCADE,
+			    CONSTRAINT `fk_permission_gp` FOREIGN KEY (`permission_fk`) REFERENCES `db`.`permissions`(`id`) ON DELETE CASCADE,
 			    CONSTRAINT `pk_group_permissions` PRIMARY KEY (`group_fk`, `permission_fk`)
 			) ENGINE=INNODB;";
 		$db->pdo->exec($SQL);	
