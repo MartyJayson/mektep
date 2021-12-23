@@ -90,6 +90,7 @@ Coded by www.creative-tim.com
 						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
 						<a class="dropdown-item" href="/dashboard">Dashboard</a>
 						<a class="dropdown-item" href="/profile">Profile</a>
+						<a class="dropdown-item" href="/chat">Chat</a>
 						<a class="dropdown-item" href="/passwordchange">Change password</a>
 							<a class="dropdown-item" href="/logout">Logout</a>
 						</div>

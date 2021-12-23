@@ -96,7 +96,8 @@ class CourseController extends Controller
     {
         $data = $request->getBody();
         $courseID = $data['courseID'];
-        $content = Course::findOne(["id" => $courseID]);
+        $content = new Course();
+        $content -> findOne(["id" => $courseID]);
         return $this->render('courseContent', [
             'model' => $content,
         ]);

@@ -26,6 +26,10 @@ $app->router->get('/', [SiteController::class, 'home']);
 $app->router->get('/contact', [SiteController::class, 'contact']);
 $app->router->post('/contact', [SiteController::class, 'handleContact']);
 $app->router->get('/login', [AuthController::class, 'login']);
+$app->router->get('/chat', [SiteController::class, 'chat']);
+$app->router->post('/chat', [SiteController::class, 'chat']);
+$app->router->post('/post', [SiteController::class, 'post']);
+
 $app->router->get('/logout', [AuthController::class, 'logout']);
 $app->router->post('/login', [AuthController::class, 'login']);
 $app->router->get('/register', [AuthController::class, 'register']);
