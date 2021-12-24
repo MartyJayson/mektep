@@ -58,9 +58,9 @@ class SiteController extends Controller
 		session_start();
 		if(isset($_SESSION['name'])){
    		$text = $_POST['text'];
-     
+		$name = $_SESSION['name'];
     	$fp = fopen("log.html", 'a');
-    	fwrite($fp, "<div class='msgln'>(".date("g:i A").") <b>".$_SESSION['name']."</b>: ".stripslashes(htmlspecialchars($text))."<br></div>");
+    	fwrite($fp, "<div class='msgln $name'>(".date("H:i").") <b>".$name."</b>: ".stripslashes(htmlspecialchars($text))."<br></div>");
     	fclose($fp);
 }
 	}

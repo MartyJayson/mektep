@@ -42,7 +42,7 @@ a {
     margin-bottom:25px;
     padding:10px;
     background:#fff;
-    width:90%;
+    width:70%;
     border:1px solid #ACD8F0;
     overflow:auto; }
   
@@ -61,7 +61,16 @@ a {
   
 .logout { float:right; }
   
-.msgln { margin:0 0 2px 0; }
+.msgln {
+    margin:1%;   
+    background-color: #659EC7;
+    padding: 1%;
+    display: table;
+    border-radius: 10px;
+    }
+#current{
+    color: blue;
+}
  </style>
  <?php
 session_start();
@@ -95,7 +104,7 @@ if(!isset($_SESSION['name'])){
 else if(isset($_GET['logout'])){ 
     //Simple exit message
     $fp = fopen("log.html", 'a');
-    fwrite($fp, "<div class='msgln'><i>User ". $_SESSION['name'] ." has left the chat session.</i><br></div>");
+    fwrite($fp, "<div class='msgln'><i>User". $_SESSION['name'] ." has left the chat session.</i><br></div>");
     fclose($fp);
       
     session_destroy();
@@ -105,7 +114,7 @@ else{
 ?>
 <div id="wrapper">
     <div id="menu">
-        <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?></b></p>
+        <p class="welcome">Welcome, <b id="current"><?php echo $_SESSION['name']; ?></b></p>
         <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
         <div style="clear:both"></div>
     </div>    
@@ -129,6 +138,12 @@ else{
 <script type="text/javascript">
 // jQuery Document
 $(document).ready(function(){
+    var cur = document.getElementById("current").innerText;
+    var elem = document.getElementsByClassName(cur);
+    
+    for (var i = 0; i < elem.length; i++) {
+        elem[i].style.marginLeft = "80%";
+    }
     //If user wants to end session
 	$("#exit").click(function(){
 		var exit = confirm("Are you sure you want to end the session?");
@@ -142,8 +157,6 @@ $("#submitmsg").click(function(){
 		$.post("/post", {text: clientmsg});				
 		$("#usermsg").attr("value", "");
 		return false;
-        document.location.reload();
-
 });
 //Load the file containing the chat log
 function loadLog(){		
